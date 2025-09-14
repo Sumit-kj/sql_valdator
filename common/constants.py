@@ -19,6 +19,10 @@ c_resp_syntax_validation_failure = 'Invalid SQL Query'
 
 # String constant
 c_str_query = 'query'
+c_str_tables = 'tables'
+c_str_table_name = 'table_name'
+c_str_columns = 'columns'
+c_str_datatype = 'datatype'
 
 # Regex Patterns
 c_rp_sql_query_table = '\w+'

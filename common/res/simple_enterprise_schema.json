@@ -9,6 +9,13 @@
                 "email": "Email address of the user.",
                 "role": "Role of the user in the system (e.g., admin, agent).",
                 "created_at": "Timestamp when the user account was created."
+            },
+            "datatype": {
+                "user_id": "INT",
+                "name": "VARCHAR",
+                "email": "VARCHAR",
+                "role": "VARCHAR",
+                "created_at": "DATETIME"
             }
         },
         {
@@ -21,6 +28,14 @@
                 "status": "Current status of the incident (e.g., open, resolved).",
                 "created_at": "Timestamp when the incident was created.",
                 "resolved_at": "Timestamp when the incident was resolved."
+            },
+            "datatype": {
+                "incident_id": "INT",
+                "user_id": "INT",
+                "priority": "VARCHAR",
+                "status": "VARCHAR",
+                "created_at": "DATETIME",
+                "resolved_at": "DATETIME"
             }
         },
         {
@@ -32,6 +47,13 @@
                 "assigned_to": "User ID the asset is assigned to.",
                 "purchase_date": "Date the asset was purchased.",
                 "warranty_expiry": "Warranty expiration date."
+            },
+            "datatype": {
+                "asset_id": "INT",
+                "asset_type": "VARCHAR",
+                "assigned_to": "INT",
+                "purchase_date": "DATETIME",
+                "warranty_expiry": "DATETIME"
             }
         },
         {
@@ -41,6 +63,11 @@
                 "department_id": "Unique identifier for the department.",
                 "name": "Name of the department.",
                 "manager_id": "User ID of the department manager."
+            },
+            "datatype": {
+                "department_id": "INT",
+                "name": "VARCHAR",
+                "manager_id": "INT"
             }
         },
         {
@@ -52,6 +79,13 @@
                 "subject": "Brief description of the issue.",
                 "status": "Current status of the ticket.",
                 "assigned_to": "Support agent handling the ticket."
+            },
+            "datatype": {
+                "ticket_id": "INT",
+                "user_id": "INT",
+                "subject": "VARCHAR",
+                "status": "VARCHAR",
+                "assigned_to": "INT"
             }
         },
         {
@@ -63,6 +97,13 @@
                 "content": "Main content of the article.",
                 "created_by": "User ID of the article creator.",
                 "created_at": "Timestamp when the article was created."
+            },
+            "datatype": {
+                "article_id": "INT",
+                "title": "VARCHAR",
+                "content": "TEXT",
+                "created_by": "INT",
+                "created_at": "DATETIME"
             }
         },
         {
@@ -74,6 +115,13 @@
                 "description": "Details about the requested change.",
                 "status": "Status of the change request.",
                 "approval_status": "Approval status (e.g., pending, approved, rejected)."
+            },
+            "datatype": {
+                "request_id": "INT",
+                "requested_by": "INT",
+                "description": "TEXT",
+                "status": "VARCHAR",
+                "approval_status": "VARCHAR"
             }
         },
         {
@@ -84,6 +132,12 @@
                 "user_id": "User involved in the logged activity.",
                 "action": "Action performed by the user.",
                 "timestamp": "Time the action occurred."
+            },
+            "datatype": {
+                "log_id": "INT",
+                "user_id": "INT",
+                "action": "VARCHAR",
+                "timestamp": "DATETIME"
             }
         }
     ]
