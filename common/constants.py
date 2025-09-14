@@ -45,10 +45,10 @@ c_rp_sql_insert_query_insert = '^INSERT\s+INTO\s+'
 c_rp_sql_insert_query_columns = '\s*\(([\w\s,]+)\)'
 c_rp_sql_insert_query_values = '\s*VALUES\s*\(.*\)'
 
-c_rp_sql_update_query_update = '\s*UPDATE\s+'
+c_rp_sql_update_query_update = '^UPDATE\s+'
 c_rp_sql_update_query_set = '\s+SET\s+.+'
 
-c_rp_sql_delete_query_delete = '\s*DELETE\s+FROM\s+'
+c_rp_sql_delete_query_delete = '^DELETE\s+FROM\s+'
 
 c_rp_sql_select_query = (
     fr'{c_rp_sql_select_query_basic}'
