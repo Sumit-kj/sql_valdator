@@ -2,6 +2,7 @@ from django.http import HttpRequest, JsonResponse
 
 from common import utils as utils
 from common import constants as const
+from validator import syntax_validator
 
 
 def ping(_: HttpRequest) -> JsonResponse:
@@ -24,3 +25,17 @@ def get_schema_json(_: HttpRequest) -> JsonResponse:
     """
     response = utils.get_schema_json()
     return JsonResponse(response)
+
+
+def validate_sql_syntax(request) -> JsonResponse:
+    """
+    This function checks the syntax of the SQL auery
+    :param request: The request that contains the SQL query
+    :return: JsonResponse of the API
+    """
+    query = request.param_dict[const.c_str_query].upper().strip()
+    is_valid_sql_syntax = syntax_validator.sql_regex_validation(query)
+    return JsonResponse({
+        const.c_str_message: const.c_resp_syntax_validation_success if is_valid_sql_syntax else const.c_resp_syntax_validation_failure,
+        const.c_str_status: const.c_str_status_ok
+    })
